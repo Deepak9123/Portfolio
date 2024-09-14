@@ -18,7 +18,7 @@
   <body>
     <header class="header">
       <a href="#" class="logo">Portfolio.</a>
-      <nav class="navbar">
+      <nav id="navbar" class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -286,12 +286,42 @@
       </div>
     </section> -->
 
-    <div id="contactModal" class="modal">
+    <div id="hireModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Contact Details</h2>
-        <p>Email: deepakmahatoj.n.v@gmail.com</p>
-        <p>Address: Jamshedpur, Jharkhand || Phone: +91 9123163568</p>
+        <h2>Hire Deepak Kumar</h2>
+        
+        <div class="modal-sections">
+          <div class="contact-section">
+            <h3>Contact Details</h3>
+            <p><i class="fas fa-envelope"></i> deepakmahatoj.n.v@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Jamshedpur, Jharkhand India</p>
+            <p><i class="fas fa-phone"></i> +91 9123163568</p>
+          </div>
+          
+          <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li>C#</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>SQL</li>
+              <li>.NET Core</li>
+              <li>ASP.NET MVC</li>
+              <li>React</li>
+              <li>Angular</li>
+            </ul>
+          </div>
+        </div>
+    
+        <form id="hireForm">
+          <h3>Send Invitation</h3>
+          <input type="text" id="recruiterName" placeholder="Your Name" required>
+          <input type="email" id="recruiterEmail" placeholder="Your Email" required>
+          <input type="text" id="companyName" placeholder="Company Name" required>
+          <textarea id="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Invitation</button>
+        </form>
       </div>
     </div>
     <script src="script.js"></script>
@@ -309,7 +339,9 @@
               >deepakmahatoj.n.v@gmail.com</a
             >
           </p>
-          <p><i class="fas fa-map-marker-alt"></i> Jamshedpur, Jharkhand</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Jamshedpur, Jharkhand India
+          </p>
           <p>
             <i class="fas fa-phone"></i>
             <a href="tel:+919123163568">+91 9123163568</a>
