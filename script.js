@@ -6,7 +6,7 @@ const navbar = document.querySelector(".navbar");
 const hireModal = document.getElementById("hireModal");
 const hireMeBtn = document.getElementById("hireMeBtn");
 const closeBtn = hireModal.querySelector(".close");
-const hireForm = document.getElementById("hireForm");
+// const hireForm = document.getElementById("hireForm");
 
 hireMeBtn.onclick = function() {
   hireModal.style.display = "block";
@@ -22,25 +22,25 @@ window.onclick = function(event) {
   }
 }
 
-hireForm.onsubmit = function(e) {
-  e.preventDefault();
+// hireForm.onsubmit = function(e) {
+//   e.preventDefault();
   
-  const recruiterName = document.getElementById("recruiterName").value;
-  const recruiterEmail = document.getElementById("recruiterEmail").value;
-  const companyName = document.getElementById("companyName").value;
-  const message = document.getElementById("message").value;
+//   const recruiterName = document.getElementById("recruiterName").value;
+//   const recruiterEmail = document.getElementById("recruiterEmail").value;
+//   const companyName = document.getElementById("companyName").value;
+//   const message = document.getElementById("message").value;
 
-  // Here you would typically send this data to a server
-  // For now, we'll just log it to the console
-  console.log("Invitation sent:", { recruiterName, recruiterEmail, companyName, message });
+//   // Here you would typically send this data to a server
+//   // For now, we'll just log it to the console
+//   console.log("Invitation sent:", { recruiterName, recruiterEmail, companyName, message });
 
-  // You could also use a service like EmailJS to send emails directly from the client-side
-  // emailjs.send("service_id", "template_id", { recruiterName, recruiterEmail, companyName, message });
+//   // You could also use a service like EmailJS to send emails directly from the client-side
+//   // emailjs.send("service_id", "template_id", { recruiterName, recruiterEmail, companyName, message });
 
-  alert("Thank you for your interest! Your invitation has been sent.");
-  hireModal.style.display = "none";
-  hireForm.reset();
-}
+//   alert("Thank you for your interest! Your invitation has been sent.");
+//   hireModal.style.display = "none";
+//   hireForm.reset();
+// }
 
 function updateActiveLink() {
   const scrollPosition = window.scrollY + window.innerHeight / 2;
