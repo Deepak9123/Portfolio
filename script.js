@@ -1,3 +1,4 @@
+// Selectors for various elements
 const navbarLinks = document.querySelectorAll(".navbar a");
 const sections = document.querySelectorAll("section");
 const footer = document.querySelector('footer');
@@ -6,48 +7,61 @@ const navbar = document.querySelector(".navbar");
 const hireModal = document.getElementById("hireModal");
 const hireMeBtn = document.getElementById("hireMeBtn");
 const closeBtn = hireModal.querySelector(".close");
-// const hireForm = document.getElementById("hireForm");
+const hireForm = document.getElementById("hireForm");  // Ensure this is not commented out
 
+// Hire Me Button - Open Modal
 hireMeBtn.onclick = function() {
   hireModal.style.display = "block";
 }
 
+// Close Modal Button
 closeBtn.onclick = function() {
   hireModal.style.display = "none";
 }
 
+// Close Modal by Clicking Outside
 window.onclick = function(event) {
-  if (event.target == hireModal) {
+  if (event.target === hireModal) {
     hireModal.style.display = "none";
   }
 }
 
-// hireForm.onsubmit = function(e) {
-//   e.preventDefault();
-  
-//   const recruiterName = document.getElementById("recruiterName").value;
-//   const recruiterEmail = document.getElementById("recruiterEmail").value;
-//   const companyName = document.getElementById("companyName").value;
-//   const message = document.getElementById("message").value;
+// Handle Form Submission
+hireForm.onsubmit = function(e) {
+  e.preventDefault();
 
-//   // Here you would typically send this data to a server
-//   // For now, we'll just log it to the console
-//   console.log("Invitation sent:", { recruiterName, recruiterEmail, companyName, message });
+  const recruiterName = document.getElementById("recruiterName").value;
+  const recruiterEmail = document.getElementById("recruiterEmail").value;
+  const companyName = document.getElementById("companyName").value;
+  const message = document.getElementById("message").value;
 
-//   // You could also use a service like EmailJS to send emails directly from the client-side
-//   // emailjs.send("service_id", "template_id", { recruiterName, recruiterEmail, companyName, message });
+  // Prepare the data to send via EmailJS
+  const templateParams = {
+    recruiterName: recruiterName,
+    recruiterEmail: recruiterEmail,
+    companyName: companyName,
+    message: message
+  };
 
-//   alert("Thank you for your interest! Your invitation has been sent.");
-//   hireModal.style.display = "none";
-//   hireForm.reset();
-// }
+  // Send the email using EmailJS
+  emailjs.send("service_id", "template_id", templateParams)
+    .then(function(response) {
+      console.log("SUCCESS!", response.status, response.text);  
+      alert("Thank you for your interest! Your invitation has been sent.");
+      hireModal.style.display = "none"; 
+      hireForm.reset(); 
+    })
+    .catch(function(error) {
+      hireModal.style.display = "none"; 
+      hireForm.reset(); 
+    });
+};
 
+// Active Link Highlighting
 function updateActiveLink() {
   const scrollPosition = window.scrollY + window.innerHeight / 2;
-
   let activeIndex = sections.length;
 
-  // Check regular sections
   while (--activeIndex && scrollPosition < sections[activeIndex].offsetTop) {}
 
   // Check if footer is in view
@@ -59,11 +73,13 @@ function updateActiveLink() {
   navbarLinks[activeIndex].classList.add("active");
 }
 
+// Hamburger Menu Toggle
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navbar.classList.toggle("show");
 });
 
+// Smooth Scroll for Navbar Links
 navbarLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -82,11 +98,17 @@ navbarLinks.forEach((link) => {
   });
 });
 
+// Update active link on scroll and resize
 window.addEventListener("scroll", updateActiveLink);
 window.addEventListener("resize", updateActiveLink);
 
-// Initial call
+// Initial call to highlight the correct link
 updateActiveLink();
+
+// Modal Trigger Functionality (Check for correct references for 'btn' and 'span')
+const btn = document.getElementById("btn");
+const modal = document.getElementById("modal");
+const span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -97,7 +119,7 @@ span.onclick = function () {
 };
 
 window.onclick = function (event) {
-  if (event.target == modal) {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
 };

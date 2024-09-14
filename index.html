@@ -12,6 +12,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("user_id"); // Replace 'YOUR_USER_ID' with your actual user ID from EmailJS
+      })();
+    </script>
+
     <link rel="icon" href="Assets/icons8-profile-48.png" type="image/x-icon" />
     <title>Portfolio of Deepak</title>
   </head>
@@ -290,15 +298,17 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Hire Deepak Kumar</h2>
-        
+
         <div class="modal-sections">
           <div class="contact-section">
             <h3>Contact Details</h3>
             <p><i class="fas fa-envelope"></i> deepakmahatoj.n.v@gmail.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Jamshedpur, Jharkhand India</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jamshedpur, Jharkhand India
+            </p>
             <p><i class="fas fa-phone"></i> +91 9123163568</p>
           </div>
-          
+
           <div class="skills-section">
             <h3>Technical Skills</h3>
             <ul>
@@ -313,12 +323,27 @@
             </ul>
           </div>
         </div>
-    
+
         <form id="hireForm">
           <h3>Send Invitation</h3>
-          <input type="text" id="recruiterName" placeholder="Your Name" required>
-          <input type="email" id="recruiterEmail" placeholder="Your Email" required>
-          <input type="text" id="companyName" placeholder="Company Name" required>
+          <input
+            type="text"
+            id="recruiterName"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            id="recruiterEmail"
+            placeholder="Your Email"
+            required
+          />
+          <input
+            type="text"
+            id="companyName"
+            placeholder="Company Name"
+            required
+          />
           <textarea id="message" placeholder="Your Message" required></textarea>
           <button type="submit">Send Invitation</button>
         </form>
