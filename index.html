@@ -13,10 +13,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
       (function () {
-        emailjs.init("user_id"); // Replace 'YOUR_USER_ID' with your actual user ID from EmailJS
+        emailjs.init({
+          publicKey: "Ul_DF5CYwwB1BAhkR", // Replace 'YOUR_PUBLIC_KEY' with your actual user ID from EmailJS
+        });
       })();
     </script>
 
@@ -45,8 +50,9 @@
         <h1>Hi, I'm Deepak</h1>
         <h3>.NET Full Stack Developer</h3>
         <p>
-          Results-driven Software Engineer with 2+ years of experience in .NET
-          and frontend technologies.
+          Results-driven Software Engineer with over 3 years of experience in
+          .NET and front-end technologies, delivering efficient and scalable
+          solutions.
         </p>
         <div class="btn-box">
           <a href="#" id="hireMeBtn">Hire Me</a>
@@ -324,28 +330,47 @@
           </div>
         </div>
 
-        <form id="hireForm">
-          <h3>Send Invitation</h3>
+        <!-- Form -->
+        <form id="hireForm" novalidate>
+          <!-- <h3>Send Invitation</h3> -->
+
+          <!-- Recruiter Name -->
           <input
             type="text"
             id="recruiterName"
             placeholder="Your Name"
             required
           />
+          <span class="error-message" id="nameError"></span>
+
           <input
             type="email"
             id="recruiterEmail"
             placeholder="Your Email"
             required
           />
+          <span class="error-message" id="emailError"></span>
+
           <input
             type="text"
             id="companyName"
             placeholder="Company Name"
             required
           />
+          <span class="error-message" id="companyError"></span>
+
           <textarea id="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Invitation</button>
+          <span class="error-message" id="messageError"></span>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submitButton">Send Invitation</button>
+          <div id="loader" class="loader-overlay" style="display: none">
+            <div class="loader-container">
+              <div class="envelope-loader">
+                <div class="paper"></div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>
