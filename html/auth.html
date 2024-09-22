@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Assets/icons8-profile-48.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/auth.css">
+    <title>Password Authentication</title>
+</head>
+<body>
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Authenticate Yourself</h2>
+            <p>Please enter your password to access the portfolio.</p>
+            <input type="password" id="password" placeholder="Enter Password" />
+            <button id="submitPassword">Submit</button>
+            <div id="message" class="error-message"></div>
+        </div>
+    </div>
+    <!-- <button id="openModal">Open HR Portal</button> -->
+
+    <script src="/javascript/auth.js"></script>
+</body>
+</html>

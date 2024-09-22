@@ -74,3 +74,42 @@
     border-radius: 5px;
     font-family: monospace;
   }  
+
+  .buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    gap: 10px; /* Space between buttons */
+    margin: 20px; /* Margin around buttons */
+}
+
+.buttons button {
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Optional: Max width for larger screens */
+    padding: 12px; /* Padding for better touch targets */
+    font-size: 16px; /* Font size for readability */
+    color: #ffffff; /* Text color */
+    background-color: #007bff; /* Button color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.buttons button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+@media screen and (max-width: 600px) {
+  .buttons button {
+      font-size: 14px; /* Adjust font size for mobile */
+  }
+}
+
+ /* Error Message Styles */
+ .error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: none; /* Hidden by default */
+}

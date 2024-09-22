@@ -11,12 +11,14 @@
     <div class="container">
       <h1>Generate Email Template</h1>
 
-      <form id="emailForm">
+      <form id="emailForm" novalidate>
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required />
+        <span class="error-message" id="nameError"></span>
 
         <label for="company">Company Name:</label>
         <input type="text" id="company" name="company" required />
+        <span class="error-message" id="companyError"></span>
 
         <label for="position">Position:</label>
         <input
@@ -26,6 +28,7 @@
           value=".NET Developer"
           required
         />
+        <span class="error-message" id="positionError"></span>
 
         <label for="skills">Your Skills:</label>
         <input
@@ -35,6 +38,7 @@
           value="C#, .NET Core, ASP.NET, SQL Server"
           required
         />
+        <span class="error-message" id="skillsError"></span>
 
         <label for="message">Cover Letter (Optional):</label>
         <textarea
@@ -45,16 +49,14 @@
         ></textarea>
 
         <div class="buttons">
-          
-
           <button type="button" onclick="goToHomePage()">
             Back to Homepage
           </button>
           <button type="button" onclick="goToRefer()">
-            Reffer Your Friends
+            Refer Your Friends
           </button>
           <button type="submit">Generate Email</button>
-        </div>
+        </div>       
       </form>
 
       <div class="email-output" id="emailOutput">

@@ -29,25 +29,25 @@ window.onclick = function (event) {
 // Function to display message popup box
 function showMessagePopup(message, isSuccess) {
   // Create the popup box
-  const popup = document.createElement('div');
-  popup.classList.add('popup-message');
-  popup.style.position = 'fixed';
-  popup.style.bottom = '20px';
-  popup.style.right = '20px';
-  popup.style.backgroundColor = isSuccess ? '#4CAF50' : '#f44336'; // Green for success, Red for failure
-  popup.style.color = 'white';
-  popup.style.padding = '15px';
-  popup.style.borderRadius = '5px';
-  popup.style.boxShadow = '0px 0px 10px rgba(0,0,0,0.2)';
-  popup.style.zIndex = '1000';
-  popup.style.fontSize = '16px';
+  const popup = document.createElement("div");
+  popup.classList.add("popup-message");
+  popup.style.position = "fixed";
+  popup.style.bottom = "20px";
+  popup.style.right = "20px";
+  popup.style.backgroundColor = isSuccess ? "#4CAF50" : "#f44336"; // Green for success, Red for failure
+  popup.style.color = "white";
+  popup.style.padding = "15px";
+  popup.style.borderRadius = "5px";
+  popup.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.2)";
+  popup.style.zIndex = "1000";
+  popup.style.fontSize = "16px";
   popup.textContent = message;
 
   // Append the popup box to the body
   document.body.appendChild(popup);
 
   // Automatically remove the popup after 3 seconds
-  setTimeout(function() {
+  setTimeout(function () {
     popup.remove();
   }, 3000);
 }
@@ -55,9 +55,11 @@ function showMessagePopup(message, isSuccess) {
 // Handle Form Submission
 hireForm.onsubmit = function (e) {
   e.preventDefault();
-  
+
   // Clear all previous error messages
-  document.querySelectorAll(".error-message").forEach((el) => el.style.display = "none");
+  document
+    .querySelectorAll(".error-message")
+    .forEach((el) => (el.style.display = "none"));
 
   const recruiterName = document.getElementById("recruiterName").value;
   const recruiterEmail = document.getElementById("recruiterEmail").value;
@@ -73,38 +75,46 @@ hireForm.onsubmit = function (e) {
     formIsValid = false;
   }
 
-  // Validate Email
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(recruiterEmail)) {
-    document.getElementById("emailError").textContent = "Please enter a valid email address.";
+  // Validate Email (First, check if the email field is empty)
+  if (recruiterEmail.trim() === "") {
+    document.getElementById("emailError").textContent = "Email is required.";
     document.getElementById("emailError").style.display = "block";
     formIsValid = false;
+  } else {
+    // Validate Email format (if the email field is not empty)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(recruiterEmail)) {
+      document.getElementById("emailError").textContent =
+        "Please enter a valid email address.";
+      document.getElementById("emailError").style.display = "block";
+      formIsValid = false;
+    }
   }
 
   // Validate Company Name
   if (companyName.trim() === "") {
-    document.getElementById("companyError").textContent = "Company name is required.";
+    document.getElementById("companyError").textContent =
+      "Company name is required.";
     document.getElementById("companyError").style.display = "block";
     formIsValid = false;
   }
 
   // Validate Message
   if (message.trim() === "") {
-    document.getElementById("messageError").textContent = "Please enter your message.";
+    document.getElementById("messageError").textContent =
+      "Please enter your message.";
     document.getElementById("messageError").style.display = "block";
     formIsValid = false;
   }
 
-  // Form validation check
-  if (!recruiterName || !recruiterEmail || !companyName || !message) {
-    // If any field is empty, show a validation message
-    // alert('Please fill out all required fields.');
-    return;  // Exit if validation fails
+  // Check if the form is valid before showing the loader
+  if (!formIsValid) {
+    return; // Exit if validation fails, no loader will be shown
   }
 
-  // Show the loader
+  // Show the loader only after all validations have passed
   const loader = document.getElementById("loader");
-  loader.style.display = "flex";  // Use flex to center the loader
+  loader.style.display = "flex"; // Use flex to center the loader
 
   // If form is valid, proceed with sending email
   if (formIsValid) {
@@ -115,25 +125,28 @@ hireForm.onsubmit = function (e) {
       message: message,
     };
 
-  // Send the email using EmailJS
-  emailjs
-    .send("service_m8clctq", "template_yb8t3qn", templateParams)
-    .then(function (response) {
-      console.log("SUCCESS!", response.status, response.text);
-      // alert("Thank you for your interest! Your invitation has been sent.");
-      showMessagePopup("Thank you for your interest! Your invitation has been sent.", true); // Success message
-      loader.style.display = "none";
-      hireModal.style.display = "none";
-      hireForm.reset();
-    })
-    .catch(function (error) {
-      console.log("FAILED...", error);
-      // alert("Failed to send email. Please try again.");
-      showMessagePopup("Failed to send email. Please try again.", false); // Failure message
-      // Hide the loader
-      loader.style.display = "none";
-      hireForm.reset();
-    });
+    // Send the email using EmailJS
+    emailjs
+      .send("service_m8clctq", "template_yb8t3qn", templateParams)
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        // alert("Thank you for your interest! Your invitation has been sent.");
+        showMessagePopup(
+          "Thank you for your interest! Your invitation has been sent.",
+          true
+        ); // Success message
+        loader.style.display = "none";
+        hireModal.style.display = "none";
+        hireForm.reset();
+      })
+      .catch(function (error) {
+        console.log("FAILED...", error);
+        // alert("Failed to send email. Please try again.");
+        showMessagePopup("Failed to send email. Please try again.", false); // Failure message
+        // Hide the loader
+        loader.style.display = "none";
+        hireForm.reset();
+      });
   }
 };
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/formStyle.css" />
     <link rel="icon" href="/Assets/icons8-profile-48.png" type="image/x-icon" />
 
@@ -13,31 +13,56 @@
     <script type="text/javascript">
       (function () {
         emailjs.init({
-          publicKey: "CmNUoBgCx9Rhq6QQy", // Replace 'YOUR_PUBLIC_KEY' with your actual user ID from EmailJS
+          publicKey: "dz4fK0ceg1X5VsJYP", // Replace 'YOUR_PUBLIC_KEY' with your actual user ID from EmailJS
         });
       })();
     </script>
     <!-- <script defer src="formScript.js"></script> -->
     <title>Email Form - HR Notification</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="form-container">
-        <h1>Send Application to HR</h1>
-        <form id="emailForm">
-            <label for="hrEmail">HR Email:</label>
-            <input type="email" id="hrEmail" name="hrEmail" placeholder="Enter HR's email" required>
-            
-            <label for="subject">Email Subject:</label>
-            <input type="text" id="subject" name="subject" placeholder="Enter email subject" required>
-            
-            <button type="submit" class="submit-btn" style="margin-right: 10px";>Send Email</button>
-            <button type="button" onclick="goToHomePage()" style="margin-right: 10px;">Back to Homepage</button>
-            <!-- <div class="buttons" style="text-align: center";>
-                
-                <button type="button" onclick="goToRefer()">Send E-Mail to HR</button>
-              </div> -->
-        </form>
+      <h1>Send Application to HR</h1>
+      <form id="emailForm" novalidate>
+        <label for="hrEmail">HR Email:</label>
+        <input
+          type="email"
+          id="hrEmail"
+          name="hrEmail"
+          placeholder="Enter HR's email"
+          required
+        />
+        <span class="error-message" id="emailError"></span>
+
+        <label for="subject">Email Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Enter email subject"
+          required
+        />
+        <span class="error-message" id="subjectError"></span>
+
+        <button type="submit" class="submit-btn" style="margin-right: 10px" ;>
+          Send Email
+        </button>
+        <button
+          type="button"
+          onclick="goToHomePage()"
+          style="margin-right: 10px"
+        >
+          Back to Homepage
+        </button>
+        <div id="loader" class="loader-overlay" style="display: none">
+          <div class="loader-container">
+            <div class="envelope-loader">
+              <div class="paper"></div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
     <script src="/javascript/formScript.js"></script>
-</body>
+  </body>
 </html>
