@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
       body,
       table,
@@ -92,7 +95,7 @@
         background-color: #007bff;
         color: #ffffff;
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 10px 10px;
         border-radius: 5px;
         font-weight: bold;
         display: inline-block;
@@ -113,17 +116,46 @@
         margin: 5px 0;
       }
       .social-icons {
-    display: flex;
-    justify-content: center; /* Center the icons */
-    margin: 10px 0; /* Adjust margin */
-}
+        display: flex;
+        justify-content: center; /* Center the icons */
+        margin: 10px 0; /* Adjust margin */
+      }
 
-.social-icons a {
-    margin: 0 10px; /* Space between icons */
-    font-size: 24px; /* Size of the icons */
-    color: #333; /* Icon color */
-    text-decoration: none; /* Remove underline */
-}
+      .button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #3498db;
+        border: none;
+        border-radius: 9999px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        flex: 1;
+        max-width: 200px;
+      }
+
+      .button:hover,
+      .button:focus {
+        transform: scale(1.05);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+      }
+
+      .social-icons a {
+        margin: 0 10px; /* Space between icons */
+        font-size: 24px; /* Size of the icons */
+        color: #333; /* Icon color */
+        text-decoration: none; /* Remove underline */
+      }
       .social-icons a:hover {
         color: #007bff;
       }
@@ -149,28 +181,41 @@
         .content h2 {
           font-size: 18px; /* Adjust sub-header size */
         }
+        .button {
+          flex: 0 1 calc(50% - 1rem);
+          margin: 0.5rem 0;
+          padding: 11px 21px;
+          font-size: 9px;
+          min-width: 0;
+          max-width: none;
+        }
+        .button:hover,
+        .button:focus {
+          transform: scale(1.05);
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .button:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+        }
+      }
+
+      @media (max-width: 400px) {
         .button-container {
-        display: flex;
-        flex-direction: row; /* Align buttons in a row */
-        justify-content: space-between; /* Space between buttons */
-        margin: 10px 0; /* Margin for the container */
-    }
-    .button {
-        flex: 1; /* Allow buttons to grow equally */
-        margin: 0 5px; /* Spacing between buttons */
-        text-align: center; /* Center text inside buttons */
-        padding: 10px; /* Add padding for a better touch target */
-        font-size: 12px; /* Set font size */
-        border-radius: 5px; /* Rounded corners */
-        transition: background-color 0.3s; /* Smooth background change on hover */
-    }
-    .button:hover {
-        background-color: #0056b3; /* Change color on hover */
-    }
-}
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button {
+    width: 28%; /* Slightly less than 50% to account for spacing */
+    max-width: none;
+    margin-bottom: 0;
+  }
+      }
     </style>
     <link rel="icon" href="/Assets/icons8-profile-48.png" type="image/x-icon" />
-    <title>Referral Application</title>
+    <title>Job Application</title>
   </head>
   <body>
     <div class="wrapper">
@@ -252,26 +297,23 @@
             <h2 style="color: #003366; font-size: 20px; margin-bottom: 15px">
               Portfolio and Resume
             </h2>
-            <p></p>
             <p>
               You can review my portfolio and download my resume using the links
               below:<br />
-              <div class="button-container">
               <a
                 href="https://deepakmahato.vercel.app"
                 class="button"
                 target="_blank"
                 style="margin-right: 30px; color: aliceblue"
-                >View My Portfolio</a
+                >View Portfolio</a
               >
               <a
                 href="https://drive.google.com/file/d/1adbjFEpPrICaE7Dz6TLoOMV49xjZWZvC/view?usp=sharing"
                 class="button"
                 target="_blank"
                 style="color: aliceblue"
-                >Download My Resume</a
+                >Download Resume</a
               >
-            </div>
             </p>
 
             <p>
@@ -294,18 +336,34 @@
               are my top priorities.
             </p>
             <div class="social-icons">
-                <a href="https://github.com/Deepak9123" target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/deepak-kumar-mahato/" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook"></i>
-                </a>
+              <a
+                href="https://github.com/Deepak9123"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://twitter.com/yourprofile"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/deepak-kumar-mahato/"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://facebook.com/yourprofile"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
             </div>
           </td>
         </tr>

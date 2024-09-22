@@ -82,7 +82,7 @@ img {
     background-color: #007bff;
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
@@ -142,4 +142,77 @@ button {
   
   button:hover {
     background-color: #218838;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 50%;
+}
+
+.button:hover, .button:focus {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+.button-homepage {
+    background-color: #3498db;
+}
+
+.button-homepage:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+.button-email {
+    background-color: #2ecc71;
+}
+
+.button-email:focus {
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.5);
+}
+
+@media (min-width: 640px) {
+    .buttons-container {
+        flex-direction: row;
+    }
+
+    .button {
+        width: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .buttons-container {
+      flex-direction: column;
+    }
+  
+    .button {
+      width: 50%;
+      max-width: none;
+    }
   }
