@@ -39,6 +39,7 @@ body {
   border: 1px solid #ccc; /* Light border */
   border-radius: 5px; /* Rounded corners */
   box-sizing: border-box; /* Include padding and border in total width */
+  font-size: 16px;
 }
 
 .eye-icon {
