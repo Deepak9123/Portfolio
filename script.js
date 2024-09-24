@@ -9,13 +9,13 @@ const hireMeBtn = document.getElementById("hireMeBtn");
 const closeBtn = hireModal.querySelector(".close");
 const hireForm = document.getElementById("hireForm"); // Ensure this is not commented out
 
-document.addEventListener('DOMContentLoaded', function() {
-  var footerHireMeBtn = document.getElementById('footerHireMeBtn');
-  var hireModal = document.getElementById('hireModal');
-  
-  footerHireMeBtn.addEventListener('click', function(e) {
+document.addEventListener("DOMContentLoaded", function () {
+  var footerHireMeBtn = document.getElementById("footerHireMeBtn");
+  var hireModal = document.getElementById("hireModal");
+
+  footerHireMeBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    hireModal.style.display = 'block';
+    hireModal.style.display = "block";
   });
 });
 

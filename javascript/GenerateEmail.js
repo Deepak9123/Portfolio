@@ -9,7 +9,9 @@ document.getElementById("emailForm").addEventListener("submit", function (e) {
   const company = document.getElementById("company").value.trim();
   const position = document.getElementById("position").value.trim();
   const skills = document.getElementById("skills").value.trim();
-  const message = document.getElementById("message").value.trim() || "I am interested in this position as it aligns with my skills and experience.";
+  const message =
+    document.getElementById("message").value.trim() ||
+    "I am interested in this position as it aligns with my skills and experience.";
 
   // Clear previous error messages
   document.getElementById("nameError").style.display = "none";
@@ -19,32 +21,34 @@ document.getElementById("emailForm").addEventListener("submit", function (e) {
 
   // Validation checks
   if (name === "") {
-      document.getElementById("nameError").textContent = "Name is required.";
-      document.getElementById("nameError").style.display = "block";
-      formIsValid = false;
+    document.getElementById("nameError").textContent = "Name is required.";
+    document.getElementById("nameError").style.display = "block";
+    formIsValid = false;
   }
 
   if (company === "") {
-      document.getElementById("companyError").textContent = "Company name is required.";
-      document.getElementById("companyError").style.display = "block";
-      formIsValid = false;
+    document.getElementById("companyError").textContent =
+      "Company name is required.";
+    document.getElementById("companyError").style.display = "block";
+    formIsValid = false;
   }
 
   if (position === "") {
-      document.getElementById("positionError").textContent = "Position is required.";
-      document.getElementById("positionError").style.display = "block";
-      formIsValid = false;
+    document.getElementById("positionError").textContent =
+      "Position is required.";
+    document.getElementById("positionError").style.display = "block";
+    formIsValid = false;
   }
 
   if (skills === "") {
-      document.getElementById("skillsError").textContent = "Skills are required.";
-      document.getElementById("skillsError").style.display = "block";
-      formIsValid = false;
+    document.getElementById("skillsError").textContent = "Skills are required.";
+    document.getElementById("skillsError").style.display = "block";
+    formIsValid = false;
   }
 
   // If the form is not valid, stop here
   if (!formIsValid) {
-      return;
+    return;
   }
 
   // Generate email if all fields are valid
@@ -71,9 +75,9 @@ ${phoneno}`;
 });
 
 function goToHomePage() {
-  window.location.href = '/index.html'; // Change this if your homepage has a different file name or path
+  window.location.href = "/index.html"; // Change this if your homepage has a different file name or path
 }
 
 function goToRefer() {
-  window.location.href = 'Referral.html'; // Change this if your homepage has a different file name or path
+  window.location.href = "Referral.html"; // Change this if your homepage has a different file name or path
 }

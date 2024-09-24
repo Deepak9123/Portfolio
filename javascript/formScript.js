@@ -2,7 +2,6 @@ function goToHomePage() {
   window.location.href = "/index.html";
 }
 
-// Function to display message popup box
 function showMessagePopup(message, isSuccess) {
   // Create the popup box
   const popup = document.createElement("div");

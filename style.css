@@ -15,8 +15,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #060606; /* Dark background for the header */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #060606;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
@@ -33,7 +33,7 @@ body {
 }
 
 .logo:hover {
-  color: #00d8ff; /* Lighten color on hover */
+  color: #00d8ff;
 }
 
 .navbar {
@@ -51,12 +51,12 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #00abf0; /* Highlight background on hover */
-  color: #081b29; /* Text color on hover */
+  background-color: #00abf0;
+  color: #081b29; 
 }
 
 .navbar a.active {
-  background-color: #00abf0; /* Active link background */
+  background-color: #00abf0; 
   color: #081b29;
   font-weight: bold;
 }
@@ -176,18 +176,18 @@ body {
 
 .profile-image {
   margin-top: 50px;
-  text-align: center; /* Center the image */
+  text-align: center;
 }
 
 .profile-image img {
-  width: 350px; /* Set a specific width */
-  height: 500px; /* Maintain aspect ratio */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  transition: transform 0.3s ease; /* Add a transition effect for hover */
+  width: 350px;
+  height: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; 
 }
 
 .profile-image img:hover {
-  transform: scale(1.05); /* Slightly scale the image on hover */
+  transform: scale(1.05); 
 }
 
 .section-title {
@@ -435,9 +435,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .modal-content h2 {
-  margin-bottom: 20px; /* Add space after the main heading */
-  padding-bottom: 10px; /* Add some padding at the bottom */
-  border-bottom: 2px solid #00abf0; /* Add a subtle line under the heading */
+  margin-bottom: 20px;
+  padding-bottom: 10px; 
+  border-bottom: 2px solid #00abf0; 
 }
 
 .close {
@@ -492,8 +492,8 @@ body {
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px; /* Ensure font size is at least 16px to prevent mobile zoom */
-    width: 100%;     /* Make the input fields responsive */
+  font-size: 16px; 
+    width: 100%; 
     box-sizing: border-box;
 }
 
@@ -572,7 +572,7 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust based on your header height */
+    top: 60px; 
     left: 0;
     width: 100%;
     background-color: #3e3d3d;
@@ -641,19 +641,18 @@ body {
 
   .profile-image {
     margin-top: 50px;
-    text-align: center; /* Center the image */
+    text-align: center; 
   }
 
   .profile-image img {
-    width: 190px; /* Set a specific width */
-    height: 280px; /* Maintain aspect ratio */
-
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    transition: transform 0.3s ease; /* Add a transition effect for hover */
+    width: 190px; 
+    height: 280px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; 
   }
 
   .profile-image img:hover {
-    transform: scale(1.05); /* Slightly scale the image on hover */
+    transform: scale(1.05); 
   }
   .skills {
     padding: 60px 0;
@@ -811,9 +810,9 @@ body {
 }
 
 .home-sci a:hover {
-  color: #081b29; /* Change icon color on hover */
-  background: #00abf0; /* Change background color on hover */
-  box-shadow: 0 0 10px #00abf0; /* Add shadow to highlight */
+  color: #081b29; 
+  background: #00abf0; 
+  box-shadow: 0 0 10px #00abf0; 
 }
 
 .home-sci a::before {
@@ -859,16 +858,16 @@ body {
 
 @media (max-width: 768px) {
   .social-resume-container {
-    left: 50%; /* Center the container horizontally */
-    transform: translateX(-50%); /* Move it back to the exact center */
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .home-sci {
-    width: 100px; /* Reduce the width for smaller screens */
+    width: 100px; 
   }
 
   .home-sci a {
-    width: 30px; /* Smaller icons for mobile */
+    width: 30px; 
     height: 30px;
     font-size: 16px;
   }
