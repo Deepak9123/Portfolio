@@ -6,8 +6,8 @@
 }
 
 body {
-  background: #081b29;
-  color: #ededed;
+  background: #f0f1f1;
+  color: #2d52ae;
 }
 
 .header {
@@ -175,15 +175,32 @@ body {
 }
 
 .profile-image {
-  margin-top: 50px;
-  text-align: center;
+  width: 350px;
+  height: 430px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #64ffda;
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-24px);
+  }
+  100% {
+      transform: translateY(0);
+  }
 }
 
 .profile-image img {
   width: 350px;
-  height: 500px;
+  height: 417px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease; 
+  /* object-fit: cover; */
 }
 
 .profile-image img:hover {
@@ -315,7 +332,7 @@ body {
 }
 
 .job-responsibilities {
-  background-color: #161616;
+  background-color: #bfe1e7;
   padding: 20px;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -640,12 +657,13 @@ body {
   }
 
   .profile-image {
-    margin-top: 50px;
-    text-align: center; 
-  }
+    width: 280px;
+    height: 344px;
+    animation: none;
+}
 
   .profile-image img {
-    width: 190px; 
+    width: 270px; 
     height: 280px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease; 
@@ -837,14 +855,14 @@ body {
 .download-resume {
   display: inline-block;
   padding: 10px 60px;
-  background: #00abf0;
+  background: #6fec21;
   border-radius: 40px;
   font-size: 16px;
   color: #081b29;
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 0 5px #00abf0, 0 0 25px #00abf0;
+  box-shadow: 0 0 5px #00abf0, 0 0 8px #00abf0;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
