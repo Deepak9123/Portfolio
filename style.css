@@ -478,9 +478,11 @@ body {
   margin-bottom: 20px;
 }
 
-.contact-section,
+.contact-section{
+  flex: 1;
+}
 .skills-section {
-  flex-basis: 48%;
+  flex: 1;
 }
 
 .skills-section ul {
