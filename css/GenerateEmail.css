@@ -97,6 +97,24 @@ button:hover {
   transition: background-color 0.3s;
 }
 
+.button-link {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.button-link:hover {
+  background-color: #0056b3;
+}
+
 .buttons button:hover {
   background-color: #0056b3; 
 }

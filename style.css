@@ -1217,6 +1217,33 @@ button:hover {
   z-index: 9999;
 }
 
+.modal {
+  display: block;
+}
+
+.modal .close {
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 1;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+.hamburger {
+  width: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.job-dates {
+  font-size: small;
+}
+
 /* Loader container */
 .loader-container {
   text-align: center;

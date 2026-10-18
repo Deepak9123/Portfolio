@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-notice {
+  position: fixed;
+  z-index: 2000;
+  right: 20px;
+  bottom: 20px;
+  max-width: min(420px, calc(100vw - 40px));
+  padding: 14px 18px;
+  border-radius: 6px;
+  color: #fff;
+  background: #257942;
+  box-shadow: 0 4px 18px #0003;
+}
+
+.app-notice.is-error {
+  background: #b82c2c;
+}
+
+.error-message.visible {
+  display: block;
+}

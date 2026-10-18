@@ -111,3 +111,11 @@ button {
 .close:hover {
   color: black; /* Change color on hover */
 }
+
+.modal-content .close,
+.password-container .eye-icon {
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
